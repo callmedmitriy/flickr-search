@@ -1,0 +1,25 @@
+@import '../../style/variables.scss';
+
+.search {
+
+    &__label {
+        font-size: $font-size-big;
+    }
+
+    &__input {
+        border: none;
+        border-bottom: 2px solid;
+        color: $color-header-font;
+        padding: 5px;
+        background-color: $color-header-bg;
+        font-size: $font-size-big;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            font-size: $font-size-big;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import '../../style/common.scss';
+@import '../../style/variables.scss';
+
+.header {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $gap-header;
+    background-color: $color-header-bg;
+    color: $color-header-font;
+}
+
+.header__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}

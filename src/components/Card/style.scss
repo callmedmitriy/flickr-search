@@ -1,0 +1,49 @@
+@import '../../style/variables.scss';
+
+.card {
+    width: 240px;
+    margin: 10px;
+    cursor: pointer;
+
+    &__info {
+        width: 100%;
+        padding: 5px 0;
+        color: #222;
+    }
+
+    &__additional {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+    &__title {
+        margin: 0;
+        margin-top: 5px;
+        overflow: hidden;
+        transition: .3s ease;
+    }
+    &__name,
+    &__time {
+        margin: 0;
+        color: $color-gray;
+        text-align: right;
+        font-size: $font-size-small
+    }
+    
+    &__image {
+        width: 100%;
+        margin: 0;
+        box-shadow: 0px 0px 3px $color-box-shadow;
+        transition: .3s ease;
+        width: 100%;
+    }
+
+    &:hover {
+        .card__title {
+            color: $color-red;
+        }
+        .card__image {
+            box-shadow: 0px 0px 10px $color-box-shadow;
+        }
+    }
+}
