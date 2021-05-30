@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './style.scss'
+import './style.scss';
 
-const Spinner:React.VFC = () => (<div className="spinner" />)
+const Spinner: React.VFC = () => <div className="spinner" />;
 
 export default Spinner;

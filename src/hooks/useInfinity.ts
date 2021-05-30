@@ -3,7 +3,7 @@ import React from 'react';
 const useInfinity = () => {
     const [allowFetch, setAllowFetch] = React.useState(false);
     React.useEffect(() => {
-        let app = document.getElementById("app");
+        const app = document.getElementById('app');
         window.addEventListener('scroll', () => {
             if (app) {
                 if (window.scrollY + window.innerHeight > app.clientHeight + app.offsetTop) {
@@ -11,9 +11,9 @@ const useInfinity = () => {
                 }
             }
         });
-    },[])
+    }, []);
 
-    return {allowFetch, setAllowFetch};
-}
+    return { allowFetch, setAllowFetch };
+};
 
 export default useInfinity;

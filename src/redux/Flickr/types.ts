@@ -12,7 +12,7 @@ export interface FlickrData {
         perpage: number;
         total: number;
         photo: FlickrPhoto[];
-    }
+    };
 }
 
 export interface FlickrPhoto {

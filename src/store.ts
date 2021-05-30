@@ -14,16 +14,13 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 function configureStore() {
     const middlewares = [thunk];
 
-    const store = createStore(
-        reducers,
-        composeEnhancers(applyMiddleware(...middlewares)),
-    );
+    const store = createStore(reducers, composeEnhancers(applyMiddleware(...middlewares)));
 
     return store;
 }
 
 const store = configureStore();
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 export default store;

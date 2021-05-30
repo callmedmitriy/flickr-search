@@ -10,34 +10,34 @@ const flickrSlice = createSlice({
     name: 'flickrSlice',
     initialState,
     reducers: {
-        changeSearchQuery(state, {payload}: PayloadAction<string | undefined>) {
+        changeSearchQuery(state, { payload }: PayloadAction<string | undefined>) {
             state.query = payload;
             state.data = undefined;
-        }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(getFlcikrData.fulfilled, (state, { payload }) => {
-        if (state.data) {
-            const photos = [...state.data.photos.photo, ...payload.photos.photo];
-            let newState: FlickrState = {
-                ...state,
-                isLoading: false,
-                data: {
-                    ...payload,
-                    photos: {
-                        ...payload.photos,
-                        photo: photos
-                    }
-                }
+            if (state.data) {
+                const photos = [...state.data.photos.photo, ...payload.photos.photo];
+                const newState: FlickrState = {
+                    ...state,
+                    isLoading: false,
+                    data: {
+                        ...payload,
+                        photos: {
+                            ...payload.photos,
+                            photo: photos,
+                        },
+                    },
+                };
+                return newState;
+            } else {
+                return {
+                    ...state,
+                    isLoading: false,
+                    data: payload,
+                };
             }
-            return newState;
-        } else {
-            return {
-                ...state,
-                isLoading: false,
-                data: payload,
-            }
-        }
         });
         builder.addCase(getFlcikrData.pending, (state) => ({
             ...state,
